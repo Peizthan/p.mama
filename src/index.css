@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* P Mama — Global Styles */
+
+/* Custom font families via Tailwind theme */
+@theme {
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: #FAFAF5;
+  color: #1C3A2B;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAFAF5;
+}
+::-webkit-scrollbar-thumb {
+  background: #4A9B6F;
+  border-radius: 3px;
+}
+
+/* Font utility classes */
+.font-display {
+  font-family: var(--font-display);
+}
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Smooth image rendering */
+img {
+  image-rendering: auto;
+}

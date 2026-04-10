@@ -21,7 +21,7 @@ const DOTS = [
 function Leaf({ size, x, y, delay, duration }) {
   return (
     <motion.div
-      className="absolute pointer-events-none select-none z-[2] text-green-300/30"
+      className="absolute pointer-events-none select-none z-[2] text-[#9de3db]/50"
       style={{ left: x, top: y }}
       animate={{
         y: [0, -20, 0],
@@ -51,7 +51,7 @@ function Leaf({ size, x, y, delay, duration }) {
 function Dot({ x, y, delay }) {
   return (
     <motion.div
-      className="absolute pointer-events-none w-1.5 h-1.5 rounded-full bg-[#F9C74F]/40 z-[2]"
+      className="absolute pointer-events-none w-1.5 h-1.5 rounded-full bg-[#f0ca3b]/55 z-[2]"
       style={{ left: x, top: y }}
       animate={{ scale: [1, 1.8, 1], opacity: [0.4, 0.9, 0.4] }}
       transition={{ duration: 3, delay, repeat: Infinity, ease: 'easeInOut' }}

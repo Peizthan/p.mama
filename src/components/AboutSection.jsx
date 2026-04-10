@@ -3,7 +3,7 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { useLang } from '../context/LanguageContext'
 
-const LOGO_FULL = 'https://github.com/user-attachments/assets/ea2af4a4-e138-4d53-b662-03f4ef9310a4'
+const LOGO_FULL = '/brand-logo.png'
 
 function useReveal() {
   const ref = useRef(null)
@@ -19,10 +19,10 @@ function StatBadge({ value, label, delay }) {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
-      className="flex flex-col items-center text-center p-6 rounded-3xl bg-white shadow-sm border border-green-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+      className="flex flex-col items-center text-center p-6 rounded-3xl bg-[#ffffff] shadow-sm border border-[#d3d7e3] hover:shadow-md hover:-translate-y-1 transition-all duration-300"
     >
-      <span className="text-4xl font-display font-bold text-[#2D6B47] mb-1">{value}</span>
-      <span className="text-sm text-[#5a7a68] font-medium">{label}</span>
+      <span className="text-4xl font-display font-semibold text-[#292b5a] mb-1">{value}</span>
+      <span className="text-sm text-[#4e556f] font-medium uppercase tracking-[0.06em]">{label}</span>
     </motion.div>
   )
 }
@@ -40,12 +40,12 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative py-24 md:py-36 bg-[#FAFAF5] overflow-hidden"
+      className="relative py-24 md:py-36 bg-[#eff0f4] overflow-hidden"
       ref={sectionRef}
     >
-      {/* Background organic blob */}
-      <div className="absolute top-0 right-[-10%] w-[40vw] h-[40vw] rounded-full bg-[#D1F0DF]/50 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-[-5%] w-[30vw] h-[30vw] rounded-full bg-[#FEF3C7]/60 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-44 bg-gradient-to-b from-[#292b5a] to-transparent" />
+      <div className="absolute top-0 right-[-10%] w-[40vw] h-[40vw] rounded-full bg-[#22a19a]/20 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-[-5%] w-[30vw] h-[30vw] rounded-full bg-[#ea7650]/20 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Image side */}
@@ -55,9 +55,8 @@ export default function AboutSection() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="relative flex justify-center lg:justify-start"
         >
-          {/* Decorative ring */}
-          <div className="absolute inset-0 m-auto w-[300px] h-[300px] md:w-[380px] md:h-[380px] rounded-full border-2 border-dashed border-[#4A9B6F]/30 animate-[spin_20s_linear_infinite]" />
-          <div className="relative z-10 bg-gradient-to-br from-[#D1F0DF] to-[#A8E6C3] rounded-[40%_60%_60%_40%/40%_40%_60%_60%] p-8">
+          <div className="absolute inset-0 m-auto w-[300px] h-[300px] md:w-[380px] md:h-[380px] rounded-full border-2 border-dashed border-[#464579]/35 animate-[spin_22s_linear_infinite]" />
+          <div className="relative z-10 bg-gradient-to-br from-[#292b5a] to-[#464579] rounded-[36%_64%_58%_42%/42%_36%_64%_58%] p-8 shadow-2xl shadow-[#1d1f41]/30">
             <img
               src={LOGO_FULL}
               alt="P Mama logo"
@@ -72,7 +71,7 @@ export default function AboutSection() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#E85D26] mb-4"
+            className="inline-block text-xs font-bold tracking-[0.22em] uppercase text-[#ea7650] mb-4"
           >
             {t.about.label}
           </motion.span>
@@ -81,7 +80,7 @@ export default function AboutSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl font-bold text-[#1C3A2B] leading-tight mb-6"
+            className="font-display text-5xl md:text-6xl font-semibold text-[#171d30] leading-[0.95] mb-6"
           >
             {t.about.title}
           </motion.h2>
@@ -90,7 +89,7 @@ export default function AboutSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[#4a6557] text-lg leading-relaxed mb-10"
+            className="text-[#38415b] text-xl leading-relaxed mb-10"
           >
             {t.about.body}
           </motion.p>

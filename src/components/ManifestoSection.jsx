@@ -10,15 +10,25 @@ export default function ManifestoSection() {
   const words = t.manifesto.quote.split(' ')
 
   return (
-    <section className="relative py-24 md:py-36 bg-[#1C3A2B] overflow-hidden">
+    <section className="relative py-24 md:py-36 overflow-hidden">
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "url('/brand-bg.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      <div className="absolute inset-0 bg-[#0b121ddd]/95" />
+
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-[#4A9B6F]/15 blur-3xl" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-[#E85D26]/10 blur-3xl" />
+        <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-[#22a19a]/16 blur-3xl" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-[#ea7650]/14 blur-3xl" />
       </div>
 
       {/* Large decorative quote mark */}
-      <div className="absolute top-8 left-8 text-[20rem] leading-none text-white/[0.03] font-display font-bold select-none pointer-events-none">
+      <div className="absolute top-8 left-8 text-[20rem] leading-none text-white/[0.04] font-display font-semibold select-none pointer-events-none">
         "
       </div>
 
@@ -27,13 +37,13 @@ export default function ManifestoSection() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
-          className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#A8E6C3] mb-8"
+          className="inline-block text-xs font-bold tracking-[0.22em] uppercase text-[#a3ebe2] mb-8"
         >
           {t.manifesto.label}
         </motion.span>
 
         {/* Animated word-by-word quote */}
-        <p className="font-display text-2xl md:text-3xl xl:text-4xl font-bold text-white leading-relaxed mb-8">
+        <p className="font-display text-4xl md:text-5xl xl:text-6xl font-semibold text-[#f4f5f8] leading-[0.97] mb-8">
           {words.map((word, i) => (
             <motion.span
               key={i}
@@ -51,7 +61,7 @@ export default function ManifestoSection() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-[#A8E6C3] font-semibold text-lg tracking-wide"
+          className="text-[#f0ca3b] font-semibold text-xl tracking-[0.12em] uppercase"
         >
           {t.manifesto.author}
         </motion.p>
@@ -61,7 +71,7 @@ export default function ManifestoSection() {
           initial={{ scaleX: 0 }}
           animate={inView ? { scaleX: 1 } : {}}
           transition={{ duration: 0.8, delay: 1, ease: 'easeOut' }}
-          className="mx-auto mt-10 h-px w-24 bg-gradient-to-r from-transparent via-[#A8E6C3] to-transparent"
+          className="mx-auto mt-10 h-px w-24 bg-gradient-to-r from-transparent via-[#a3ebe2] to-transparent"
         />
       </div>
     </section>

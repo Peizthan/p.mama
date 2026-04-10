@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { useLang } from '../context/LanguageContext'
 
-const LOGO_SQUARE = 'https://github.com/user-attachments/assets/3e2ccb58-8a45-4d00-b05c-ef8e7011bc37'
+const LOGO_SQUARE = '/brand-logo.png'
 
 export default function Footer() {
   const { t } = useLang()
@@ -10,9 +10,19 @@ export default function Footer() {
   const inView = useInView(ref, { once: true, margin: '-40px' })
 
   return (
-    <footer className="relative bg-[#0D2B1A] text-white overflow-hidden pt-16 pb-8">
+    <footer className="relative bg-[#070d16] text-white overflow-hidden pt-16 pb-8">
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: "url('/brand-bg.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      <div className="absolute inset-0 bg-[#070d16]/88" />
+
       {/* Background decoration */}
-      <div className="absolute top-0 left-[-10%] w-[40vw] h-[40vw] rounded-full bg-[#4A9B6F]/10 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-[-10%] w-[40vw] h-[40vw] rounded-full bg-[#22a19a]/12 blur-3xl pointer-events-none" />
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
@@ -27,7 +37,7 @@ export default function Footer() {
               alt="P Mama"
               className="w-20 h-20 object-contain mb-4"
             />
-            <p className="text-[#A8E6C3] text-sm font-medium mb-2">{t.footer.tagline}</p>
+            <p className="text-[#a3ebe2] text-sm font-medium mb-2 uppercase tracking-[0.08em]">{t.footer.tagline}</p>
             <p className="text-white/40 text-xs">{t.footer.made}</p>
           </motion.div>
 
@@ -37,7 +47,7 @@ export default function Footer() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="text-sm font-bold tracking-widest uppercase text-[#A8E6C3] mb-6">
+            <h4 className="text-sm font-bold tracking-widest uppercase text-[#a3ebe2] mb-6">
               {t.footer.links_title}
             </h4>
             <ul className="space-y-3">
@@ -60,7 +70,7 @@ export default function Footer() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="text-sm font-bold tracking-widest uppercase text-[#A8E6C3] mb-6">
+            <h4 className="text-sm font-bold tracking-widest uppercase text-[#a3ebe2] mb-6">
               {t.footer.social_title}
             </h4>
             <div className="flex gap-4">
@@ -73,7 +83,7 @@ export default function Footer() {
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-[#4A9B6F] hover:bg-[#4A9B6F]/20 transition-all duration-200"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-[#22a19a] hover:bg-[#22a19a]/25 transition-all duration-200"
                 >
                   <Icon />
                 </a>

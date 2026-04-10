@@ -1,12 +1,24 @@
 @import "tailwindcss";
 
-/* P Mama — Global Styles */
+/* P Mama brand system */
 
-/* Custom font families via Tailwind theme */
 @theme {
-  --font-display: 'Syne', system-ui, sans-serif;
-  --font-body: 'Space Grotesk', system-ui, sans-serif;
-  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+  --font-serif: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+}
+
+:root {
+  --pm-night: #071018;
+  --pm-indigo: #292b5a;
+  --pm-indigo-soft: #464579;
+  --pm-mint: #1daf78;
+  --pm-coral: #ea7650;
+  --pm-sun: #f0ca3b;
+  --pm-cyan: #22a19a;
+  --pm-paper: #e7e8ec;
+  --pm-paper-soft: #f4f5f8;
+  --pm-ink: #141a2a;
 }
 
 *, *::before, *::after {
@@ -21,8 +33,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-body);
-  background-color: #FAFAF5;
-  color: #1C3A2B;
+  background-color: var(--pm-night);
+  background-image: url('/brand-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--pm-paper);
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,17 +51,16 @@ body {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAFAF5;
+  background: #141a2a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #4A9B6F;
-  border-radius: 3px;
+  background: #4f5388;
+  border-radius: 999px;
 }
 
-/* Font utility classes */
 .font-display {
   font-family: var(--font-display);
 }
@@ -52,7 +68,19 @@ body {
   font-family: var(--font-serif);
 }
 
-/* Smooth image rendering */
+.bg-brand-pattern {
+  background-image: url('/brand-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-brand-noise {
+  background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08) 0, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(34, 161, 154, 0.12) 0, transparent 42%),
+    radial-gradient(circle at 60% 85%, rgba(234, 118, 80, 0.15) 0, transparent 48%);
+}
+
 img {
   image-rendering: auto;
 }

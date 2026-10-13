@@ -1,14 +1,15 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
 import { useRef } from 'react'
 import { useLang } from '../context/LanguageContext'
 import FloatingElements from './FloatingElements'
 
 /* Main logo — square variant works best in hero */
-const LOGO_SQUARE = '/brand-logo.png'
+const LOGO_SQUARE = '/images/brand/logo-640.webp'
 const BRAND_PATTERN = '/brand-bg.png'
 
 export default function Hero() {
   const { t } = useLang()
+  const reducedMotion = useReducedMotion()
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
 
@@ -35,7 +36,7 @@ export default function Hero() {
     >
       {/* Brand-pattern background */}
       <motion.div
-        style={{ y: yBg }}
+        style={{ y: reducedMotion ? 0 : yBg }}
         className="absolute inset-0 z-0"
       >
         <div
@@ -47,9 +48,9 @@ export default function Hero() {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050910]/80 via-[#111b2acc] to-[#050910]/95" />
-        <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-[#22a19a]/20 blur-3xl" />
-        <div className="absolute bottom-[-15%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#ea7650]/18 blur-3xl" />
-        <div className="absolute top-[28%] left-[16%] w-[32vw] h-[32vw] rounded-full bg-[#f0ca3b]/16 blur-2xl" />
+        <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-[#11a193]/20 blur-3xl" />
+        <div className="absolute bottom-[-15%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#f37c59]/18 blur-3xl" />
+        <div className="absolute top-[28%] left-[16%] w-[32vw] h-[32vw] rounded-full bg-[#fdd53b]/16 blur-2xl" />
       </motion.div>
 
       {/* Floating nature elements */}
@@ -63,7 +64,7 @@ export default function Hero() {
 
       {/* Content */}
       <motion.div
-        style={{ opacity }}
+        style={{ opacity: reducedMotion ? 1 : opacity }}
         className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
       >
         {/* Text block */}
@@ -76,7 +77,7 @@ export default function Hero() {
           {/* Tagline pill */}
           <motion.div variants={itemVariants}>
             <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-[#d4f4ef] bg-[#111b2a]/75 border border-white/25 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#f0ca3b] animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#fdd53b] animate-pulse" />
               {t.hero.tagline}
             </span>
           </motion.div>
@@ -84,11 +85,11 @@ export default function Hero() {
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
-            className="font-display text-6xl md:text-7xl xl:text-8xl font-semibold leading-[0.95] tracking-[0.01em] mb-6 drop-shadow-lg"
+            className="font-display text-[clamp(2rem,10vw,3.75rem)] md:text-[4rem] xl:text-[5rem] font-semibold leading-[0.95] tracking-[0.01em] mb-6 drop-shadow-lg"
           >
             <span className="block text-[#f4f5f8]">{t.hero.headline1}</span>
             <span className="block text-[#f4f5f8]">{t.hero.headline2}</span>
-            <span className="block bg-gradient-to-r from-[#22a19a] via-[#f0ca3b] to-[#ea7650] bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-[#11a193] via-[#fdd53b] to-[#f37c59] bg-clip-text text-transparent">
               {t.hero.headline3}
             </span>
           </motion.h1>
@@ -104,8 +105,8 @@ export default function Hero() {
           {/* CTA buttons */}
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
             <a
-              href="#shop"
-              className="group relative inline-flex items-center gap-2 bg-[#ea7650] text-white font-semibold uppercase tracking-[0.08em] px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#ea7650]/40 hover:-translate-y-0.5"
+              href="#collection"
+              className="group relative inline-flex items-center gap-2 bg-[#f37c59] text-[#141a2a] font-semibold uppercase tracking-[0.08em] px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#f37c59]/40 hover:-translate-y-0.5"
             >
               <span className="relative z-10">{t.hero.cta_shop}</span>
               <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -113,7 +114,7 @@ export default function Hero() {
             </a>
             <a
               href="#about"
-              className="inline-flex items-center gap-2 border-2 border-white/45 text-white font-semibold uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 hover:border-[#f0ca3b] hover:text-[#f0ca3b] hover:bg-white/10 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 border-2 border-white/45 text-white font-semibold uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 hover:border-[#fdd53b] hover:text-[#fdd53b] hover:bg-white/10 hover:-translate-y-0.5"
             >
               {t.hero.cta_learn}
             </a>
@@ -122,7 +123,7 @@ export default function Hero() {
 
         {/* Logo / illustration */}
         <motion.div
-          style={{ y: yLogo }}
+          style={{ y: reducedMotion ? 0 : yLogo }}
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
@@ -133,7 +134,7 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full bg-[#464579]/50 blur-3xl scale-110" />
             {/* Subtle rotating ring */}
             <motion.div
-              animate={{ rotate: 360 }}
+              animate={reducedMotion ? {} : { rotate: 360 }}
               transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
               className="absolute inset-[-20px] rounded-full border border-dashed border-[#f4f5f8]/35"
             />
@@ -167,11 +168,11 @@ export default function Hero() {
       >
         <span className="text-white/55 text-xs tracking-[0.2em] uppercase">{t.hero.scroll}</span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
+          animate={reducedMotion ? {} : { y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
           className="w-6 h-10 rounded-full border-2 border-white/35 flex items-start justify-center p-1.5"
         >
-          <div className="w-1.5 h-1.5 rounded-full bg-[#f0ca3b]/85" />
+          <div className="w-1.5 h-1.5 rounded-full bg-[#fdd53b]/85" />
         </motion.div>
       </motion.div>
 

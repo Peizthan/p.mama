@@ -10,12 +10,12 @@
 
 :root {
   --pm-night: #071018;
-  --pm-indigo: #292b5a;
+  --pm-indigo: #393a67;
   --pm-indigo-soft: #464579;
-  --pm-mint: #1daf78;
-  --pm-coral: #ea7650;
-  --pm-sun: #f0ca3b;
-  --pm-cyan: #22a19a;
+  --pm-mint: #51be95;
+  --pm-coral: #f37c59;
+  --pm-sun: #fdd53b;
+  --pm-cyan: #11a193;
   --pm-paper: #e7e8ec;
   --pm-paper-soft: #f4f5f8;
   --pm-ink: #141a2a;
@@ -30,6 +30,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   font-family: var(--font-body);
@@ -84,3 +85,47 @@ body {
 img {
   image-rendering: auto;
 }
+
+:root { --pm-lime: #9fcd59; --pm-lavender: #d3d2e7; --pm-green: #12b372; }
+section[id] { scroll-margin-top: 6rem; }
+:focus-visible { outline: 3px solid var(--pm-cyan); outline-offset: 5px; }
+.pm-skip { position: fixed; top: -10rem; left: 1rem; z-index: 100; background: var(--pm-paper-soft); color: var(--pm-ink); padding: .8rem 1rem; }
+.pm-skip:focus { top: 1rem; }
+.pm-container { width: min(100% - 3rem, 1180px); margin-inline: auto; }
+.pm-collection, .pm-process { padding: clamp(4rem, 8vw, 7rem) 0; background: var(--pm-paper-soft); color: var(--pm-ink); }
+.pm-process { background: var(--pm-lavender); }
+.pm-eyebrow { font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; margin-bottom: 1rem; }
+.pm-section-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1.08; max-width: 18ch; margin-bottom: 1.5rem; }
+.pm-empty { margin-top: 2.5rem; padding: clamp(1.5rem, 4vw, 3rem); border: 1px solid #393a6740; background: #fff; border-radius: 1.2rem; }
+.pm-empty h3, .pm-steps h3, .pm-product h3 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 600; line-height: 1.15; margin-bottom: .8rem; }
+.pm-empty p, .pm-contact p, .pm-intro { max-width: 62ch; line-height: 1.7; margin-bottom: 1.4rem; }
+.pm-button { display: inline-flex; gap: 1rem; justify-content: center; align-items: center; border: 1px solid var(--pm-indigo); border-radius: 999px; background: var(--pm-indigo); color: white; padding: .9rem 1.5rem; font-weight: 600; text-decoration: none; min-height: 48px; }
+.pm-button:hover { background: var(--pm-ink); }
+.pm-products { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+.pm-product { background: white; border: 1px solid #393a6730; border-radius: 1.1rem; overflow: hidden; }
+.pm-product > img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--pm-lavender); }
+.pm-product-content { padding: 1.5rem; }
+.pm-product-content p { line-height: 1.6; margin-bottom: .8rem; }
+.pm-status { text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight: 700; }
+.pm-price { font-size: 1.25rem; font-weight: 700; }
+.pm-product dl { margin: 1rem 0 1.5rem; font-size: .88rem; }
+.pm-product dt { font-weight: 700; margin-top: .6rem; }
+.pm-product dd { margin: .1rem 0 0; }
+.pm-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; list-style: none; margin-top: 2.5rem; padding: 0; }
+.pm-steps li { border-top: 1px solid #393a6740; padding-top: 1rem; }
+.pm-step-number { display: block; color: var(--pm-indigo); font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem; }
+.pm-steps p { font-size: .96rem; line-height: 1.6; }
+.pm-contact { background: var(--pm-indigo); color: white; padding: clamp(4rem, 8vw, 7rem) 0; }
+.pm-contact .pm-button { background: var(--pm-sun); border-color: var(--pm-sun); color: var(--pm-ink); }
+.pm-contact .pm-button:hover { background: white; }
+.pm-contact .pm-contact-note { font-size: .9rem; margin-top: 1rem; overflow-wrap: anywhere; }
+.pm-footer { padding: 2.5rem 0 1.5rem; background: var(--pm-night); color: var(--pm-paper-soft); }
+.pm-footer-top { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.pm-footer-top img { object-fit: contain; }
+.pm-footer-top p { flex: 1; min-width: 160px; }
+.pm-footer nav { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+.pm-footer nav a { padding-block: .6rem; text-decoration: none; }
+.pm-footer-bottom { border-top: 1px solid #ffffff30; padding-top: 1.5rem; margin-top: 1.5rem; font-size: .78rem; }
+@media (max-width: 900px) { .pm-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .pm-steps { grid-template-columns: 1fr; } .pm-container { width: calc(100% - 2.5rem); } body { background-attachment: scroll; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; } }

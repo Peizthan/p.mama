@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 
 /* Animated floating nature elements — leaves, dots, organic shapes */
 const LEAVES = [
@@ -51,7 +51,7 @@ function Leaf({ size, x, y, delay, duration }) {
 function Dot({ x, y, delay }) {
   return (
     <motion.div
-      className="absolute pointer-events-none w-1.5 h-1.5 rounded-full bg-[#f0ca3b]/55 z-[2]"
+      className="absolute pointer-events-none w-1.5 h-1.5 rounded-full bg-[#fdd53b]/55 z-[2]"
       style={{ left: x, top: y }}
       animate={{ scale: [1, 1.8, 1], opacity: [0.4, 0.9, 0.4] }}
       transition={{ duration: 3, delay, repeat: Infinity, ease: 'easeInOut' }}
@@ -60,6 +60,8 @@ function Dot({ x, y, delay }) {
 }
 
 export default function FloatingElements() {
+  const reducedMotion = useReducedMotion()
+  if (reducedMotion) return null
   return (
     <div className="absolute inset-0 overflow-hidden z-[2] pointer-events-none">
       {LEAVES.map((l) => (

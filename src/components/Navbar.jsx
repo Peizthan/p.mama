@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLang } from '../context/LanguageContext'
 
-const LOGO_FULL = '/brand-logo.png'
+const LOGO_FULL = '/images/brand/logo-160.webp'
 
 export default function Navbar() {
   const { t, toggleLang } = useLang()
@@ -15,11 +15,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    const closeOnEscape = (event) => { if (event.key === 'Escape') setMenuOpen(false) }
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [])
+
   const navLinks = [
     { label: t.nav.home, href: '#home' },
     { label: t.nav.about, href: '#about' },
-    { label: t.nav.shop, href: '#shop' },
-    { label: t.nav.blog, href: '#blog' },
+    { label: t.nav.shop, href: '#collection' },
+    { label: t.nav.blog, href: '#process' },
+    { label: t.nav.contact, href: '#contact' },
   ]
 
   return (
@@ -49,7 +56,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-semibold uppercase tracking-[0.14em] transition-colors duration-200 hover:text-[#f0ca3b] ${
+              className={`text-sm font-semibold uppercase tracking-[0.14em] transition-colors duration-200 hover:text-[#fdd53b] ${
                 scrolled ? 'text-[#e7e8ec]' : 'text-white drop-shadow'
               }`}
             >
@@ -62,8 +69,8 @@ export default function Navbar() {
             onClick={toggleLang}
             className={`text-sm font-semibold px-3 py-1.5 rounded-full border transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 ${
               scrolled
-                ? 'border-[#22a19a] text-[#9adfd6] hover:bg-[#22a19a] hover:text-[#071018]'
-                : 'border-white/70 text-white hover:bg-white hover:text-[#292b5a]'
+                ? 'border-[#11a193] text-[#9adfd6] hover:bg-[#11a193] hover:text-[#071018]'
+                : 'border-white/70 text-white hover:bg-white hover:text-[#393a67]'
             }`}
           >
             {t.nav.langToggle}
@@ -76,7 +83,7 @@ export default function Navbar() {
             onClick={toggleLang}
             className={`text-xs font-bold px-2.5 py-1 rounded-full border transition-all ${
               scrolled
-                ? 'border-[#22a19a] text-[#9adfd6]'
+                ? 'border-[#11a193] text-[#9adfd6]'
                 : 'border-white/80 text-white'
             }`}
           >
@@ -85,7 +92,9 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen((o) => !o)}
             className={`p-1 transition-colors ${scrolled ? 'text-[#e7e8ec]' : 'text-white'}`}
-            aria-label="Menu"
+            aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
+            aria-expanded={menuOpen}
+            aria-controls="pm-mobile-nav"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {menuOpen ? (
@@ -102,6 +111,7 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            id="pm-mobile-nav"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -114,7 +124,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-base font-medium text-[#e7e8ec] hover:text-[#f0ca3b] transition-colors"
+                  className="text-base font-medium text-[#e7e8ec] hover:text-[#fdd53b] transition-colors"
                 >
                   {link.label}
                 </a>

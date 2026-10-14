@@ -1,59 +1,33 @@
-# P Mama 🌿
+# P.Mama
 
-> **Eco-consciente · Arte · Vida**
+**Eco-conscious · Art · Life**
 
-P Mama is an eco-conscious brand focused on sustainability, artistic expression, and mindful living — producing biodegradable handcrafted products while promoting environmental awareness and local culture.
+P.Mama connects creative expression, local art and conscious living. Its first clothing capsule is in development. This bilingual website preserves the original artwork and provides a catalogue foundation for approved products.
 
-## Tech Stack
+## Development
 
-- **React 19** + **Vite 8**
-- **Tailwind CSS v4** (via `@tailwindcss/vite`)
-- **Framer Motion** — page animations & parallax
-- **Bilingual** — Spanish (default) / English toggle
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── Navbar.jsx           # Sticky nav with language toggle
-│   ├── Hero.jsx             # Animated hero with parallax logo
-│   ├── FloatingElements.jsx # Animated leaves & dots
-│   ├── AboutSection.jsx     # Brand story + stats
-│   ├── SustainabilitySection.jsx  # Philosophy cards
-│   ├── ManifestoSection.jsx # Animated quote section
-│   ├── CTASection.jsx       # Call-to-action + feature cards
-│   └── Footer.jsx           # Footer with social links
-├── pages/
-│   └── Home.jsx             # Home page composition
-├── context/
-│   └── LanguageContext.jsx  # ES/EN language context
-├── i18n/
-│   ├── es.js                # Spanish translations
-│   └── en.js                # English translations
-└── index.css                # Tailwind + global styles
-```
-
-## Getting Started
+React 19, Vite 8, Tailwind CSS 4 and Framer Motion.
 
 ```bash
-npm install
-npm run dev       # Development server
-npm run build     # Production build
-npm run lint      # ESLint check
+npm ci
+npm run dev
+npm test
+npm run lint
+npm run build
 ```
 
-## Deploy on Vercel
+The page includes the brand story, manifesto, collection, production approach and contact. Spanish is the default; language selection persists. Reduced motion and keyboard navigation are supported.
 
-This project is configured for Vercel with `vercel.json` — just connect the repo and deploy. The `dist/` folder is excluded from git; Vercel builds it automatically.
+## Products and brand
 
-## Brand Colors
+- [Catalogue publication guide](docs/catalogue.md)
+- [Design system](docs/design-system.md)
+- `public/catalog/products.json`: empty until approved products exist; drafts remain hidden.
+- `src/config/site.js`: catalogue path and interim owner contact.
+- Original assets remain in `public/`; lighter logo exports are in `public/images/brand/`.
 
-| Role | Color |
-|------|-------|
-| Primary Green | `#2D6B47` |
-| Deep Forest | `#1C3A2B` |
-| Teal Accent | `#4A9B6F` |
-| Warm Orange | `#E85D26` |
-| Golden Yellow | `#F9C74F` |
-| Cream BG | `#FAFAF5` |
+Enquiries open an email draft. Payments, stock reservations and order storage are outside this iteration. Confirm supplier evidence, costs and physical samples before listing products.
+
+## Deployment
+
+The existing Vercel configuration builds `dist/`. Review a branch and responsive behaviour before merging through the normal workflow.

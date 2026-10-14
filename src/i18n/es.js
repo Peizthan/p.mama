@@ -3,9 +3,12 @@ export const es = {
   lang: 'es',
 
   nav: {
+    contact: 'Contacto',
+    openMenu: 'Abrir menú',
+    closeMenu: 'Cerrar menú',
     home: 'Inicio',
-    shop: 'Tienda',
-    blog: 'Blog',
+    shop: 'Colección',
+    blog: 'Proceso',
     about: 'Nosotros',
     langToggle: 'EN',
   },
@@ -16,8 +19,8 @@ export const es = {
     headline2: 'vivir',
     headline3: 'consciente.',
     manifesto:
-      'P Mama nace de la necesidad de explotar creatividad y estilo con el compromiso de impactar de manera positiva con el medioambiente. Productos biodegradables, arte y conciencia.',
-    cta_shop: 'Explorar Tienda',
+      'P Mama nace de la necesidad de explotar creatividad y estilo con el compromiso de impactar de manera positiva con el medioambiente. Arte, identidad y decisiones conscientes.',
+    cta_shop: 'Conocer la colección',
     cta_learn: 'Nuestra Misión',
     scroll: 'Descubrir',
   },
@@ -25,9 +28,9 @@ export const es = {
   about: {
     label: 'Quiénes somos',
     title: 'Una marca con propósito',
-    body: 'P Mama ofrece productos de uso biodegradable: prendas de vestir, accesorios, muebles y todo lo que permite la imaginación. Producidos de manera artesanal, impulsamos el estilo de vida libre pero consciente y comprometido con aportar al bienestar del planeta.',
-    stat1_value: '100%',
-    stat1_label: 'Biodegradable',
+    body: 'P.Mama une creatividad, estilo y compromiso con el planeta. Empezamos por una cápsula de prendas con identidad, buscando materiales y formas de producción coherentes con una vida libre y consciente.',
+    stat1_value: 'Criterio',
+    stat1_label: 'Materiales y calidad',
     stat2_value: 'Arte',
     stat2_label: 'Local & Artesanal',
     stat3_value: '∞',
@@ -41,7 +44,7 @@ export const es = {
       {
         icon: '🌱',
         title: 'Economía Circular',
-        body: 'Producción artesanal que mantiene los materiales en uso el mayor tiempo posible, evitando la cultura del "usar y tirar".',
+        body: 'Desarrollamos una propuesta de producción que valore la durabilidad, la reparación y el uso prolongado de los materiales.',
       },
       {
         icon: '🎨',
@@ -51,12 +54,12 @@ export const es = {
       {
         icon: '🌍',
         title: 'Impacto Positivo',
-        body: 'Realizamos acciones planificadas con el fin de mejorar la mayor cantidad de espacios posibles en nuestra comunidad.',
+        body: 'Buscamos apoyar proyectos locales que cuiden el ambiente y fortalezcan nuestra comunidad.',
       },
       {
         icon: '✊',
         title: 'Compromiso Colectivo',
-        body: 'Un equipo interdisciplinario comprometido con la sostenibilidad, la innovación y el bienestar del planeta.',
+        body: 'Queremos conectar artistas, confeccionistas y personas que comparten un compromiso con el planeta.',
       },
     ],
   },
@@ -68,18 +71,10 @@ export const es = {
     author: '— P Mama',
   },
 
-  cta: {
-    label: 'Únete al movimiento',
-    title: '¿Listo para vivir consciente?',
-    body: 'Descubre nuestra colección de productos biodegradables, explora nuestro blog sobre estilo de vida sostenible y únete a la comunidad P Mama.',
-    btn_shop: 'Ver Tienda',
-    btn_blog: 'Leer Blog',
-  },
-
   footer: {
     tagline: 'Eco-consciente · Arte · Vida Libre',
     links_title: 'Explorar',
-    links: ['Tienda', 'Blog', 'Nosotros', 'Contacto'],
+    links: ['Colección', 'Proceso', 'Nosotros', 'Contacto'],
     social_title: 'Comunidad',
     rights: '© 2024 P Mama. Todos los derechos reservados.',
     made: 'Hecho con 💚 y consciencia ambiental',

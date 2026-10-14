@@ -15,7 +15,7 @@ function PhilosophyCard({ icon, title, body, index }) {
       className="group relative p-8 rounded-3xl bg-[#f8f8fb] border border-[#d4d7e4] hover:border-[#464579] hover:shadow-xl hover:shadow-[#464579]/15 hover:-translate-y-2 transition-all duration-400 overflow-hidden"
     >
       {/* Card glow on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#f0ca3b]/0 to-[#22a19a]/0 group-hover:from-[#f0ca3b]/15 group-hover:to-[#22a19a]/12 transition-all duration-400 rounded-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#fdd53b]/0 to-[#11a193]/0 group-hover:from-[#fdd53b]/15 group-hover:to-[#11a193]/12 transition-all duration-400 rounded-3xl pointer-events-none" />
 
       <span className="text-4xl mb-5 block">{icon}</span>
       <h3 className="font-display text-3xl font-semibold text-[#171d30] mb-3 leading-none">{title}</h3>
@@ -42,7 +42,7 @@ export default function SustainabilitySection() {
       </div>
 
       {/* Background decoration */}
-      <div className="absolute right-0 top-[20%] w-[35vw] h-[35vw] rounded-full bg-[#22a19a]/12 blur-3xl pointer-events-none" />
+      <div className="absolute right-0 top-[20%] w-[35vw] h-[35vw] rounded-full bg-[#11a193]/12 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -51,7 +51,7 @@ export default function SustainabilitySection() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-block text-xs font-bold tracking-[0.22em] uppercase text-[#ea7650] mb-4"
+            className="inline-block text-xs font-bold tracking-[0.22em] uppercase text-[#f37c59] mb-4"
           >
             {t.philosophy.label}
           </motion.span>

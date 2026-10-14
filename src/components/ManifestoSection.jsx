@@ -23,8 +23,8 @@ export default function ManifestoSection() {
 
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-[#22a19a]/16 blur-3xl" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-[#ea7650]/14 blur-3xl" />
+        <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-[#11a193]/16 blur-3xl" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-[#f37c59]/14 blur-3xl" />
       </div>
 
       {/* Large decorative quote mark */}
@@ -61,7 +61,7 @@ export default function ManifestoSection() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-[#f0ca3b] font-semibold text-xl tracking-[0.12em] uppercase"
+          className="text-[#fdd53b] font-semibold text-xl tracking-[0.12em] uppercase"
         >
           {t.manifesto.author}
         </motion.p>
